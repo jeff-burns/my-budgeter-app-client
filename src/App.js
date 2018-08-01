@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
+
 import DropDown from './components/DropDown/DropDown';
 import CreditPage from './components/CreditPage/CreditPage';
+import DebitPage from './components/DebitPage/DebitPage';
 
 class App extends Component {
   render() {
@@ -11,10 +13,10 @@ class App extends Component {
           <h1 className="App-title">MyBudgeter</h1>
           <DropDown />
         </header>
-        <p className="App-intro">
-        Put Monthly Net Income First
-        </p>
-        <CreditPage />
+        <main>
+          <CreditPage />
+          <DebitPage />
+        </main>
       </div>
     );
   }

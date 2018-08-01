@@ -2,7 +2,8 @@ import React from 'react';
 import { Button, ButtonGroup, ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import LogIn from '../LogIn/LogIn';
 import CreateAccount from '../CreateAccount/CreateAccount'
-
+// import DebitPage from '../DebitPage/DebitPage';
+// import CreditPage from 
 
 export default class DropDown extends React.Component {
     constructor(props) {
@@ -60,8 +61,8 @@ export default class DropDown extends React.Component {
           </DropdownMenu>
 
         </ButtonDropdown>
-        <Button color="primary">Debit From Budget</Button>
-        <Button color="danger">Credit To Budget</Button>
+        <Button color="primary" >Debit From Budget</Button>
+        <Button color="danger" >Credit To Budget</Button>
       </ButtonGroup>
     );
   }

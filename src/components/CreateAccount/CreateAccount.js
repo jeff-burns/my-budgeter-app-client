@@ -4,7 +4,7 @@ import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 export default class CreateAccount extends React.Component {
   render() {
     return (
-        <Form>
+        <Form id="create-account">
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
           <Input type="email" name="email" id="exampleEmail" placeholder="youremail@email.com" />
@@ -18,7 +18,6 @@ export default class CreateAccount extends React.Component {
           <Input type="password" name="password2" id="examplePassword2" placeholder="Re-Enter Password" />
         </FormGroup>
         <Button color="primary" size="sm">Create Account</Button>{' '}
-
       </Form>
     );
   }

@@ -9,12 +9,9 @@ export default class DropDown extends React.Component {
     constructor(props) {
         super(props)
           this.toggle = this.toggle.bind(this);
-          // this.toggleLogIn = this.toggleLogIn.bind(this);
-          // this.toggleCreateAccount = this.toggleCreateAccount.bind(this);
           this.state = {
             dropdownOpen: false,
-            logInOpen: false,
-            dropdownOpen: false
+            
           };
         }
       
@@ -23,18 +20,6 @@ export default class DropDown extends React.Component {
             dropdownOpen: !this.state.dropdownOpen
           });
         }
-
-        // toggleLogIn() {
-        //   this.setState({
-        //     logInOpen: !this.state.logInOpen
-        //   });
-        // }
-
-        // toggleCreateAccount() {
-        //   this.setState({
-        //     dropdownOpen: !this.state.dropdownOpen
-        //   });
-        // }
     
     
   render() {
@@ -61,8 +46,8 @@ export default class DropDown extends React.Component {
           </DropdownMenu>
 
         </ButtonDropdown>
-        <Button color="primary" >Debit From Budget</Button>
-        <Button color="danger" >Credit To Budget</Button>
+        <Button color="primary" onClick={this.props.toggleDebit}>Debit From Budget</Button>
+        <Button color="danger" onClick={this.props.toggleCredit}>Credit To Budget</Button>
       </ButtonGroup>
     );
   }

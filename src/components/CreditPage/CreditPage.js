@@ -8,8 +8,6 @@ const CreditPage = (props) => {
   return (
     <Row>
     <Col sm="6">  
-    
-
       <Card>
         <CardHeader tag="h3">Credit Input</CardHeader>
         <CardBody>
@@ -45,6 +43,7 @@ const CreditPage = (props) => {
         <CardFooter className="text-muted">Footer</CardFooter>
       </Card>
       </Col>
+      
       <Col sm="6">
       <Card>
         <CardHeader tag="h3">List of Income Input</CardHeader>

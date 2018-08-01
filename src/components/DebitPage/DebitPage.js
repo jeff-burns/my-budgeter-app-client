@@ -50,6 +50,8 @@ const DebitPage = (props) => {
         </CardBody>
         <CardFooter className="text-muted">Footer</CardFooter>
       </Card>
+        </Col>
+        <Col sm="6"> 
 
       <Card>
         <CardHeader tag="h3">List of Expenses Input</CardHeader>

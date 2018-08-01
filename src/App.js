@@ -6,16 +6,43 @@ import CreditPage from './components/CreditPage/CreditPage';
 import DebitPage from './components/DebitPage/DebitPage';
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+      this.toggleCredit = this.toggleCredit.bind(this);
+      this.toggleDebit = this.toggleDebit.bind(this);
+      this.state = {
+        creditOpen: false,
+        debitOpen: false
+      };
+    }
+
+    toggleCredit() {
+      this.setState({
+        creditOpen: !this.state.creditOpen
+      });
+    }
+
+    toggleDebit() {
+      this.setState({
+        debitOpen: !this.state.debitOpen
+      });
+    }
+
   render() {
     return (
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">MyBudgeter</h1>
-          <DropDown />
+          <DropDown 
+              toggleCredit={this.toggleCredit}
+              toggleDebit={this.toggleDebit}
+          />
         </header>
         <main>
-          <CreditPage />
-          <DebitPage />
+          { (this.state.creditOpen) ? 
+            <CreditPage /> : null }
+          { (this.state.debitOpen) ?
+            <DebitPage /> : null }
         </main>
       </div>
     );

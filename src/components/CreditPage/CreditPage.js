@@ -1,8 +1,6 @@
 import React from 'react';
 import { Card, Button, CardHeader, CardFooter, CardBody,
   CardTitle, CardText, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
-// import InputForm from '../InputForm/InputForm'
-
 
 const CreditPage = (props) => {
   return (
@@ -13,15 +11,15 @@ const CreditPage = (props) => {
         <CardBody>
         <Form>
         <FormGroup>
-          <Label for="exampleNumber">Income Amount</Label>
+          <Label for="exampleNumber" className="text-primary">Income Amount</Label>
           <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Rounded Dollar Amount" />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleDate">Date</Label>
+          <Label for="exampleDate" className="text-primary">Date</Label>
           <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
         </FormGroup>
         <FormGroup>
-          <Label for="exampleSelect">Source/Type</Label>
+          <Label for="exampleSelect" className="text-primary">Source/Type</Label>
           <Input type="select" name="select" id="exampleSelect">
             <option>Basic Income</option>
             <option>Cash</option>
@@ -30,7 +28,7 @@ const CreditPage = (props) => {
           </Input>
         </FormGroup>
         <FormGroup>
-          <Label for="exampleText">Notes</Label>
+          <Label for="exampleText" className="text-primary">Notes</Label>
           <Input type="textarea" name="text" id="exampleText" />
         </FormGroup>
           <FormText color="muted">
@@ -38,7 +36,7 @@ const CreditPage = (props) => {
             It's a bit lighter and easily wraps to a new line.
           </FormText>
       </Form>
-          <Button>Update Budget</Button>
+          <Button color="success">Update Budget</Button>
         </CardBody>
         <CardFooter className="text-muted">Footer</CardFooter>
       </Card>
@@ -46,13 +44,16 @@ const CreditPage = (props) => {
       
       <Col sm="6">
       <Card>
-        <CardHeader tag="h3">List of Income Input</CardHeader>
+        <CardHeader tag="h3">Details</CardHeader>
         <CardBody>
-          <CardTitle>Special Title Treatment</CardTitle>
-          <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-          <Button>Go somewhere</Button>
+        <CardFooter className="text-muted">Total Income for This Month</CardFooter>
+          <CardTitle>currentTotal left for month</CardTitle>
+          <CardFooter className="text-muted">Days Left In Month</CardFooter>
+          <CardText>Average $ left per day</CardText>
         </CardBody>
-        <CardFooter className="text-muted">Footer</CardFooter>
+        <Button>List of Debits/Credits for Month Button (maybe repeating dynamic dropdown for any previous month's data</Button>
+
+        <CardFooter className="text-muted"></CardFooter>
       </Card>
       </Col>
 
@@ -61,3 +62,4 @@ const CreditPage = (props) => {
 };
 
 export default CreditPage;
+// ONCE more than one month has been submitted, allow for averages to be made with all of them

@@ -105,13 +105,13 @@ class App extends Component {
         <header className="App-header">
           { (this.state.emailSubmitted) ?
             <Row>
-              <Col sm={{ size: 2, offset: 6 }} md={{ size: 2, offset: 8 }} lg={{ size: 2, offset: 9 }}>
+              <Col sm={{ size: 2, offset: 8 }} md={{ size: 2, offset: 9 }} lg={{ size: 2, offset: 10 }}>
                   <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleEmail}>
                       <DropdownToggle  caret>
                           {this.state.acctName}
                       </DropdownToggle>
                       <DropdownMenu right>
-                          <DropdownItem>Delete User Data</DropdownItem>
+                          <DropdownItem color="muted">Delete User Data</DropdownItem>
                           <DropdownItem divider/>
                           <DropdownItem>Sign Out</DropdownItem>
                       </DropdownMenu>

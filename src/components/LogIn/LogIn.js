@@ -5,7 +5,7 @@ export default class LogIn extends React.Component {
   render() {
     return (
       <Row>
-        <Col sm="4" md={{ size: 5, offset: 1 }}> 
+        <Col sm="4" md={{ size: 4, offset: 1 }}> 
         <Card>
         <CardHeader tag="h3">Log In</CardHeader>
 
@@ -13,7 +13,7 @@ export default class LogIn extends React.Component {
             <Form id="log-in">
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="login-email" placeholder="youremail@email.com" />
+                <Input type="email" name="email" id="login-email" placeholder="youremail@email.com" onChange={this.props.acctName}/>
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">Password</Label>
@@ -24,7 +24,7 @@ export default class LogIn extends React.Component {
           </CardBody>
           </Card>
       </Col>
-      <Col sm="4" md={{ size: 5, offset: 1 }}>
+      <Col sm="4" md={{ size: 4, offset: 1 }}>
       <Card>
       <CardHeader tag="h3">Create Account</CardHeader>
 

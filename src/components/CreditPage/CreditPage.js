@@ -13,8 +13,8 @@ const CreditPage = (props) => {
         <CardBody>
         <Form>
         <FormGroup>
-          <Label for="exampleNumber">Additional Income Amount</Label>
-          <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Dollar Amount" />
+          <Label for="exampleNumber">Income Amount</Label>
+          <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Rounded Dollar Amount" />
         </FormGroup>
         <FormGroup>
           <Label for="exampleDate">Date</Label>

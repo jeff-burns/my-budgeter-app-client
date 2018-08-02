@@ -15,7 +15,8 @@ class App extends Component {
       this.toggleCredit = this.toggleCredit.bind(this);
       this.toggleDebit = this.toggleDebit.bind(this);
       this.handleChange = this.handleChange.bind(this);
-      this.handleSubmit = this.handleSubmit.bind(this);
+      this.handleLogIn = this.handleLogIn.bind(this);
+      this.handleCreateAccount = this.handleCreateAccount.bind(this);
       this.state = {
         dropdownOpen: false,
         creditOpen: false,
@@ -57,12 +58,21 @@ class App extends Component {
       })
     }
 
-    handleSubmit(event) {
+    handleLogIn(event) {
       event.preventDefault();
-
       this.setState({
         emailSubmitted: true,
-        
+        dropdownOpen: false,
+        debitOpen: true
+      })
+    }
+
+    handleCreateAccount(event) {
+      event.preventDefault();
+      this.setState({
+        emailSubmitted: true,
+        dropdownOpen: false,
+        creditOpen: true
       })
     }
 
@@ -71,7 +81,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           { (this.state.emailSubmitted) ?
-            <AcctName /> : null }
+            <AcctName 
+              accountName={this.state.acctName} 
+              /> : null }
           <h1 className="App-title">MyBudgeter</h1>
           <DropDown 
               toggleAccount={this.toggleAccount}
@@ -84,7 +96,8 @@ class App extends Component {
           { (this.state.dropdownOpen) ? 
             <LogIn 
               acctName={this.handleChange}
-              logOrCreate={this.handleSubmit}
+              logIn={this.handleLogIn}
+              createAcct={this.handleCreateAccount}
             /> : null }
           { (this.state.creditOpen) ? 
             <CreditPage /> : null }

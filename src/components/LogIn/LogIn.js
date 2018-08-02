@@ -10,7 +10,7 @@ export default class LogIn extends React.Component {
         <CardHeader tag="h3">Log In</CardHeader>
 
           <CardBody>          
-            <Form id="log-in">
+            <Form id="log-in" onSubmit={this.props.logIn}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
                 <Input type="email" name="email" id="login-email" placeholder="youremail@email.com" onChange={this.props.acctName}/>
@@ -30,10 +30,10 @@ export default class LogIn extends React.Component {
 
       <CardBody>
             
-      <Form id="create-account">
+      <Form id="create-account" onSubmit={this.props.createAcct}>
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="create-account-email" placeholder="youremail@email.com" />
+          <Input type="email" name="email" id="create-account-email" placeholder="youremail@email.com" onChange={this.props.acctName}/>
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword">Password</Label>

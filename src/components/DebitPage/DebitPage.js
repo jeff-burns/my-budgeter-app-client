@@ -15,7 +15,7 @@ const DebitPage = (props) => {
           <Form>
           <FormGroup>
             <Label for="exampleNumber">Transaction Amount</Label>
-            <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Dollar Amount" />
+            <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Rounded Dollar Amount" />
           </FormGroup>
           <FormGroup>
             <Label for="exampleDate">Date</Label>

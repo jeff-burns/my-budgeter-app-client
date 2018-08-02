@@ -102,7 +102,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <header className="App-header container">
           { (this.state.emailSubmitted) ?
             <Row>
               <Col sm={{ size: 2, offset: 8 }} md={{ size: 2, offset: 9 }} lg={{ size: 2, offset: 10 }}>
@@ -127,7 +127,7 @@ class App extends Component {
           />
         </header>
         
-        <main>
+        <main className="container">
           { (this.state.acctToggleOpen) ? 
             <LogIn 
               acctName={this.handleChange}

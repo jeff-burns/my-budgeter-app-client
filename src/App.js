@@ -73,6 +73,7 @@ class App extends Component {
           [name]: [value]
           })
       this.handleDisable()
+
     }    
 
     handleDisable() {
@@ -92,6 +93,7 @@ class App extends Component {
       event.preventDefault();
       const name = event.target.name;
       const value = event.target.value;
+      // if ()
       this.setState({
         [name]: [value],
         emailSubmitted: true,
@@ -106,13 +108,21 @@ class App extends Component {
       event.preventDefault();
       const name = event.target.name;
       const value = event.target.value;
-      this.setState({
-        [name]: [value],
-        emailSubmitted: true,
-        acctToggleOpen: false,
-        creditOpen: true,
-        userEmail: this.state.createUserEmail
-      })
+      console.log(event.target["createPassword"].value !== event.target["createPassword2"].value)
+      if (event.target["createPassword"].value !== event.target["createPassword2"].value) {
+        alert("Passwords Do Not Match"); 
+        this.setState({
+          isDisabled: true
+        })     
+      } else {
+        this.setState({
+          [name]: [value],
+          emailSubmitted: true,
+          acctToggleOpen: false,
+          creditOpen: true,
+          userEmail: this.state.createUserEmail
+        })
+      }
     }
 
     toggleEmail() {
@@ -201,6 +211,7 @@ class App extends Component {
               createPassword={this.state.createPassword}
               createPassword2={this.state.createPassword2}
               isDisabled={this.state.isDisabled}
+             
             /> : null }
           { (this.state.creditOpen) ? 
             <CreditPage

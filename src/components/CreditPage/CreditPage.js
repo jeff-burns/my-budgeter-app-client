@@ -12,15 +12,15 @@ const CreditPage = (props) => {
         <Form onSubmit={props.handleCredit}>
         <FormGroup>
           <Label for="exampleNumber" className="text-primary">Income Amount</Label>
-          <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Rounded Dollar Amount" />
+          <Input type="text" name="incomeInput" id="exampleNumber" placeholder="Rounded Dollar Amount" />
         </FormGroup>
         <FormGroup>
           <Label for="exampleDate" className="text-primary">Date</Label>
-          <Input type="date" name="date" id="exampleDate" placeholder="date placeholder" />
+          <Input type="date" name="incomeDate" id="exampleDate" placeholder="date placeholder" />
         </FormGroup>
         <FormGroup>
           <Label for="exampleSelect" className="text-primary">Source/Type</Label>
-          <Input type="select" name="select" id="exampleSelect">
+          <Input type="select" name="incomeSource" id="exampleSelect">
             <option>Basic Income</option>
             <option>Cash</option>
             <option>Investment Income</option>
@@ -29,7 +29,7 @@ const CreditPage = (props) => {
         </FormGroup>
         <FormGroup>
           <Label for="exampleText" className="text-primary">Notes</Label>
-          <Input type="textarea" name="text" id="exampleText" />
+          <Input type="textarea" name="incomeNote" id="exampleText" />
         </FormGroup>
           <FormText color="muted">
             This is some placeholder block-level help text for the above input.

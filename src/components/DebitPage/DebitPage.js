@@ -1,36 +1,22 @@
-import React from "react";
-import {
-  Card,
-  Button,
-  CardHeader,
-  CardFooter,
-  CardBody,
-  CardTitle,
-  CardText,
-  Row,
-  Col,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-  FormText
-} from "reactstrap";
+import React from 'react';
+import { Card, Button, CardHeader, CardFooter, CardBody,
+  CardTitle, CardText, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
-const DebitPage = props => {
+const DebitPage = (props) => {
   return (
     <Row>
       <Col sm="6">
         <Card>
           <CardHeader tag="h3">Debit Input</CardHeader>
           <CardBody>
-            <Form>
+            <Form onSubmit={props.handleDebit}>
               <FormGroup>
                 <Label for="exampleNumber" className="text-primary">
                   Transaction Amount
                 </Label>
                 <Input
                   type="text"
-                  name="transactionAmount"
+                  name="expenseAmount"
                   id="exampleNumber"
                   placeholder="Rounded Dollar Amount"
                 />
@@ -41,7 +27,7 @@ const DebitPage = props => {
                 </Label>
                 <Input
                   type="date"
-                  name="date"
+                  name="expenseDate"
                   id="exampleDate"
                   placeholder="date placeholder"
                 />
@@ -50,7 +36,7 @@ const DebitPage = props => {
                 <Label for="exampleSelect" className="text-primary">
                   Transaction Type
                 </Label>
-                <Input type="select" name="select" id="exampleSelect">
+                <Input type="select" name="expenseType" id="exampleSelect">
                   <option>Groceries</option>
                   <option>Gas</option>
                   <option>Car Maintenance</option>
@@ -69,14 +55,15 @@ const DebitPage = props => {
                 <Label for="exampleText" className="text-primary">
                   Notes
                 </Label>
-                <Input type="textarea" name="text" id="exampleText" />
+                <Input type="textarea" name="expenseNote" id="exampleText" />
               </FormGroup>
               <FormText color="muted">
                 This is some placeholder block-level help text for the above
                 input. It's a bit lighter and easily wraps to a new line.
               </FormText>
+              <Button color="danger">Update Budget</Button>
             </Form>
-            <Button color="danger">Update Budget</Button>
+            
           </CardBody>
           <CardFooter className="text-muted">Footer</CardFooter>
         </Card>

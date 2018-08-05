@@ -19,6 +19,7 @@ class App extends Component {
       this.handleCreateAccount = this.handleCreateAccount.bind(this);
       this.toggleEmail = this.toggleEmail.bind(this);
       this.handleCredit = this.handleCredit.bind(this);
+      this.handleDebit = this.handleDebit.bind(this);
       this.handleDisable = this.handleDisable.bind(this);
 
       this.state = {
@@ -33,15 +34,6 @@ class App extends Component {
         userEmail: "",
         password: "",
         isDisabled: true,
-        // totalIncome: ,
-        // incomeInput: ,
-        // incomeDate: ,
-        // incomeSource: "",
-        // incomeNote: "",
-        // expenseAmount: ,
-        // expenseDate: ,
-        // expenseType: "",
-        // expenseNote: ""
       };
     }
 
@@ -121,18 +113,7 @@ class App extends Component {
         creditOpen: true,
         userEmail: this.state.createUserEmail
       })
-      
-      //fetch post with email and password to users table in db
     }
-
-    
-    // canBeSubmitted = () => {
-    //   const { userEmail, password } = this.state;
-    //   return (
-    //     userEmail.length > 0 &&
-    //     password.length > 0
-    //   );
-    // }
 
     toggleEmail() {
       this.setState(prevState => ({
@@ -142,22 +123,41 @@ class App extends Component {
 
     handleCredit(event) {
       event.preventDefault();
-      console.log(event.target["date"].value)
-      // this.setState({
-        // creditOpen: true
-
-      //   // totalIncome: ,
-      //   // incomeInput: ,
-      //   // incomeDate: ,
-      //   // incomeSource: "",
-      //   // incomeNote: ""
-      // })
+      console.log(event.target["incomeInput"].value)
+      const incomeInput = event.target["incomeInput"].value;
+      const incomeDate = event.target["incomeDate"].value; 
+      const incomeSource = event.target["incomeSource"].value;
+      const incomeNote = event.target["incomeNote"].value;     
+      const newUser = {
+        totalIncome: incomeInput,
+        incomeInput: incomeInput,
+        incomeDate: incomeDate,
+        incomeSource: incomeSource,
+        incomeNote: incomeNote
+      }
+      this.setState( newUser )
     }
     //handle credits and debits update-
       //do math for adding and subtracting and the averages needed
       //post or put this data to the user data table
       //maybe make a check on current date to the previous data dates and if it's in the same month, do a put, if not do a post for a new month
       //on re-render it should update this data because of the componentDidMount fetch 
+
+    handleDebit(event) {
+      event.preventDefault();
+      console.log(event.target["expenseAmount"].value)
+      const expenseAmount = event.target["expenseAmount"].value;
+      const expenseDate = event.target["expenseDate"].value; 
+      const expenseType = event.target["expenseType"].value;
+      const expenseNote = event.target["expenseNote"].value;     
+      const userDebit = {
+        expenseAmount: expenseAmount,
+        expenseDate: expenseDate,
+        expenseType: expenseType,
+        expenseNote: expenseNote
+      }
+      this.setState( userDebit )
+    }
 
   render() {
     console.log(this.state)
@@ -206,7 +206,9 @@ class App extends Component {
             <CreditPage
               handleCredit={this.handleCredit} /> : null }
           { (this.state.debitOpen) ?
-            <DebitPage /> : null }
+            <DebitPage
+              handleDebit={this.handleDebit} 
+            /> : null }
         </main>
       </div>
     );

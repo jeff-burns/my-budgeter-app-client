@@ -54,6 +54,7 @@ const DebitPage = props => {
                   <option>Groceries</option>
                   <option>Gas</option>
                   <option>Car Maintenance</option>
+                  <option>Rent/Mortgage</option>
                   <option>Energy Bill(s)</option>
                   <option>Internet</option>
                   <option>Medicine</option>
@@ -84,10 +85,10 @@ const DebitPage = props => {
         <Card>
         <CardHeader tag="h3">Details</CardHeader>
         <CardBody>
-        <CardFooter className="text-muted">Total Income for This Month</CardFooter>
-          <CardTitle>currentTotal left for month</CardTitle>
-          <CardFooter className="text-muted">Days Left In Month</CardFooter>
-          <CardText>Average $ left per day</CardText>
+        <CardFooter className="text-muted">'Total Income for This Month'</CardFooter>
+          <CardTitle>'currentTotal left for month'</CardTitle>
+          <CardFooter className="text-muted">'Days Left In Month'</CardFooter>
+          <CardText>'Average $ left per day'</CardText>
         </CardBody>
         <Button>List of Debits/Credits for Month Button (maybe repeating dynamic dropdown for any previous month's data</Button>
           <CardFooter className="text-muted"></CardFooter>

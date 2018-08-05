@@ -13,13 +13,16 @@ export default class LogIn extends React.Component {
             <Form id="log-in" onSubmit={this.props.logIn}>
               <FormGroup>
                 <Label for="exampleEmail">Email</Label>
-                <Input type="email" name="email" id="login-email" placeholder="youremail@email.com" onChange={this.props.acctName}/>
+                <Input type="email" name="userEmail" id="login-email" placeholder="youremail@email.com" onChange={this.props.acctName} value={this.props.userEmail}/>
               </FormGroup>
               <FormGroup>
                 <Label for="examplePassword">Password</Label>
-                <Input type="password" name="password" id="" placeholder="password" />
+                <Input type="password" name="password" id="" placeholder="password" onChange={this.props.acctName} value={this.props.password}/>
               </FormGroup>
-              <Button color="primary" size="sm">Log In</Button>{' '}
+               {(this.props.isDisabled) ? <Button color="primary" size="sm" disabled >Log In</Button> : 
+               <Button color="primary" size="sm" >Log In</Button>
+              }
+              
             </Form>
           </CardBody>
           </Card>
@@ -33,17 +36,20 @@ export default class LogIn extends React.Component {
       <Form id="create-account" onSubmit={this.props.createAcct}>
         <FormGroup>
           <Label for="exampleEmail">Email</Label>
-          <Input type="email" name="email" id="create-account-email" placeholder="youremail@email.com" onChange={this.props.acctName}/>
+          <Input type="email" name="createUserEmail" id="create-account-email" placeholder="youremail@email.com" onChange={this.props.acctName} value={this.props.createUserEmail}/>
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword">Password</Label>
-          <Input type="password" name="password" id="examplePassword" placeholder="Create Password" />
+          <Input type="password" name="createPassword" id="examplePassword" placeholder="Create Password" onChange={this.props.acctName} value={this.props.createPassword}/>
         </FormGroup>
         <FormGroup>
           <Label for="examplePassword2">Re-Enter Password</Label>
-          <Input type="password" name="password2" id="examplePassword2" placeholder="Re-Enter Password" />
+          <Input type="password" name="createPassword2" id="examplePassword2" placeholder="Re-Enter Password" onChange={this.props.acctName} value={this.props.createPassword2}/>
         </FormGroup>
-        <Button color="primary" size="sm">Create Account</Button>{' '}
+        {(this.props.isDisabled) ? <Button color="primary" size="sm" disabled >Create Account</Button> : 
+               <Button color="primary" size="sm" >Create Account</Button>
+              }
+       
       </Form>
       </CardBody>
 

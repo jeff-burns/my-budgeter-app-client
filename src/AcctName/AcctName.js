@@ -9,7 +9,7 @@ const AcctName = (props) => {
         <Col sm={{ size: 2, offset: 6 }} md={{ size: 2, offset: 8 }} lg={{ size: 2, offset: 9 }}>
             <Dropdown isOpen={props.dropdownOpen} toggle={props.toggleEmail}>
                 <DropdownToggle  caret>
-                    {props.accountName}
+                    {props.userEmail}
                 </DropdownToggle>
                 <DropdownMenu right>
                     <DropdownItem>Delete User Data</DropdownItem>

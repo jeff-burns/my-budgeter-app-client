@@ -9,7 +9,7 @@ const CreditPage = (props) => {
       <Card>
         <CardHeader tag="h3">Credit Input</CardHeader>
         <CardBody>
-        <Form>
+        <Form onSubmit={props.handleCredit}>
         <FormGroup>
           <Label for="exampleNumber" className="text-primary">Income Amount</Label>
           <Input type="text" name="transactionAmount" id="exampleNumber" placeholder="Rounded Dollar Amount" />
@@ -35,8 +35,9 @@ const CreditPage = (props) => {
             This is some placeholder block-level help text for the above input.
             It's a bit lighter and easily wraps to a new line.
           </FormText>
-      </Form>
+      
           <Button color="success">Update Budget</Button>
+          </Form>
         </CardBody>
         <CardFooter className="text-muted">Footer</CardFooter>
       </Card>
@@ -46,10 +47,10 @@ const CreditPage = (props) => {
       <Card>
         <CardHeader tag="h3">Details</CardHeader>
         <CardBody>
-        <CardFooter className="text-muted">Total Income for This Month</CardFooter>
-          <CardTitle>currentTotal left for month</CardTitle>
-          <CardFooter className="text-muted">Days Left In Month</CardFooter>
-          <CardText>Average $ left per day</CardText>
+        <CardFooter className="text-muted">'Total Income for This Month'</CardFooter>
+          <CardTitle>'currentTotal left for month'</CardTitle>
+          <CardFooter className="text-muted">'Days Left In Month'</CardFooter>
+          <CardText>'Average $ left per day'</CardText>
         </CardBody>
         <Button>List of Debits/Credits for Month Button (maybe repeating dynamic dropdown for any previous month's data</Button>
 

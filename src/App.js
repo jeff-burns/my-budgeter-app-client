@@ -13,13 +13,16 @@ import DropDown from "./components/DropDown/DropDown";
 import CreditPage from "./components/CreditPage/CreditPage";
 import DebitPage from "./components/DebitPage/DebitPage";
 import LogIn from "./components/LogIn/LogIn";
+import MyAccountPage from "./components/MyAccountPage/MyAccountPage";
 // import AcctName from './AcctName/AcctName';
 
 class App extends Component {
   constructor(props) {
     super(props);
+    this.select = this.select.bind(this)
     this.handleLogOut = this.handleLogOut.bind(this);
     this.toggleAccount = this.toggleAccount.bind(this);
+    this.toggleMyAccount = this.toggleMyAccount.bind(this);
     this.toggleCredit = this.toggleCredit.bind(this);
     this.toggleDebit = this.toggleDebit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -41,8 +44,10 @@ class App extends Component {
       emailSubmitted: false,
       userEmail: "",
       password: "",
-      isDisabled: true
+      isDisabled: true,
+      myAccountOpen: false
       // fetchedUsers: {},
+      // newUser: {}
     };
   }
 
@@ -61,15 +66,35 @@ class App extends Component {
     this.setState({
       acctToggleOpen: !this.state.acctToggleOpen,
       debitOpen: false,
-      creditOpen: false
+      creditOpen: false,
+      myAccountOpen: false
     });
+  }
+
+  select(event) {
+    if (event.target.value === "myAccount") {
+      this.toggleMyAccount()
+    }
+    if (event.target.value === "logOut") {
+      this.handleLogOut()
+    }
+  }
+
+  toggleMyAccount() {
+    this.setState({
+      myAccountOpen: true,
+      acctToggleOpen: false,
+      debitOpen: false,
+      creditOpen: false
+    })
   }
 
   toggleCredit() {
     this.setState({
       creditOpen: !this.state.creditOpen,
       debitOpen: false,
-      acctToggleOpen: false
+      acctToggleOpen: false,
+      myAccountOpen: false
     });
   }
 
@@ -77,7 +102,8 @@ class App extends Component {
     this.setState({
       debitOpen: !this.state.debitOpen,
       creditOpen: false,
-      acctToggleOpen: false
+      acctToggleOpen: false,
+      myAccountOpen: false
     });
   }
 
@@ -187,6 +213,7 @@ class App extends Component {
       createUserEmail: "",
       dropDownOpen: false,
       acctToggleOpen: false,
+      myAccountOpen: false,
       creditOpen: false,
       debitOpen: false,
       emailSubmitted: false,
@@ -194,6 +221,7 @@ class App extends Component {
       password: "",
       isDisabled: true,
       fetchedUsers: {},
+      newUser: {},
       incomeInput: 0,
       incomeDate: "",
       incomeSource: "",
@@ -295,9 +323,15 @@ class App extends Component {
                 >
                   <DropdownToggle caret>{this.state.userEmail}</DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem color="muted">My Account</DropdownItem>
+                    <DropdownItem 
+                      onClick={this.select}
+                      value="myAccount"
+                    >My Account</DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem onClick={this.handleLogOut}>Log Out</DropdownItem>
+                    <DropdownItem
+                      onClick={this.select}
+                      value="logOut"
+                    >Log Out</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </Col>
@@ -333,7 +367,13 @@ class App extends Component {
                 handleDebit={this.handleDebit} 
                 fetchedUsers={this.state.fetchedUsers}
                 userEmail={this.state.userEmail}
-              />
+            />
+          ) : null}
+          {this.state.myAccountOpen ? (
+            <MyAccountPage  
+                fetchedUsers={this.state.fetchedUsers}
+                userEmail={this.state.userEmail}
+            />
           ) : null}
         </main>
       </div>

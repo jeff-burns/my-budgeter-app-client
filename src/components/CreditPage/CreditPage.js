@@ -25,7 +25,8 @@ const CreditPage = (props) => {
             <option>Basic Income</option>
             <option>Cash</option>
             <option>Investment Income</option>
-            <option>Side Job Cash</option>
+            <option>Side Job </option>
+            <option>Total Leftover from Last Month</option>
           </Input>
         </FormGroup>
         <FormGroup>
@@ -33,8 +34,7 @@ const CreditPage = (props) => {
           <Input type="textarea" name="incomeNote" id="exampleText" />
         </FormGroup>
           <FormText color="muted">
-            This is some placeholder block-level help text for the above input.
-            It's a bit lighter and easily wraps to a new line.
+          Add additional useful details for the source of the income, if needed.
           </FormText>
       
           <Button color="success">Update Budget</Button>

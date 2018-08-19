@@ -18,6 +18,7 @@ import LogIn from "./components/LogIn/LogIn";
 class App extends Component {
   constructor(props) {
     super(props);
+    this.handleLogOut = this.handleLogOut.bind(this);
     this.toggleAccount = this.toggleAccount.bind(this);
     this.toggleCredit = this.toggleCredit.bind(this);
     this.toggleDebit = this.toggleDebit.bind(this);
@@ -42,8 +43,6 @@ class App extends Component {
       password: "",
       isDisabled: true
       // fetchedUsers: {},
-      // newUser
-      // currentUser
     };
   }
 
@@ -181,6 +180,31 @@ class App extends Component {
     }));
   }
 
+  handleLogOut() {
+    this.setState({
+      createPassword: "",
+      createPassword2: "",
+      createUserEmail: "",
+      dropDownOpen: false,
+      acctToggleOpen: false,
+      creditOpen: false,
+      debitOpen: false,
+      emailSubmitted: false,
+      userEmail: "",
+      password: "",
+      isDisabled: true,
+      fetchedUsers: {},
+      incomeInput: 0,
+      incomeDate: "",
+      incomeSource: "",
+      incomeNote: "",
+      expenseAmount: 0,
+      expenseDate: "",
+      expenseType: "",
+      expenseNote: ""
+    })
+  }
+
   handleCredit(event) {
     event.preventDefault();
     const email = this.state.userEmail;
@@ -271,9 +295,9 @@ class App extends Component {
                 >
                   <DropdownToggle caret>{this.state.userEmail}</DropdownToggle>
                   <DropdownMenu right>
-                    <DropdownItem color="muted">Delete User Data</DropdownItem>
+                    <DropdownItem color="muted">My Account</DropdownItem>
                     <DropdownItem divider />
-                    <DropdownItem>Sign Out</DropdownItem>
+                    <DropdownItem onClick={this.handleLogOut}>Log Out</DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </Col>

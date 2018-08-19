@@ -12,9 +12,9 @@ const AcctName = (props) => {
                     {props.userEmail}
                 </DropdownToggle>
                 <DropdownMenu right>
-                    <DropdownItem>Delete User Data</DropdownItem>
+                    <DropdownItem>My Account</DropdownItem>
                     <DropdownItem divider/>
-                    <DropdownItem>Sign Out</DropdownItem>
+                    <DropdownItem >Log Out</DropdownItem>
                 </DropdownMenu>
             </Dropdown>
         </Col>

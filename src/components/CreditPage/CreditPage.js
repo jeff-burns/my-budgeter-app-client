@@ -3,6 +3,7 @@ import { Card, Button, CardHeader, CardFooter, CardBody,
   CardTitle, CardText, Row, Col, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 
 const CreditPage = (props) => {
+
   return (
     <Row>
     <Col sm="6">  
@@ -47,7 +48,9 @@ const CreditPage = (props) => {
       <Card>
         <CardHeader tag="h3">Details</CardHeader>
         <CardBody>
-        <CardFooter className="text-muted">'Total Income for This Month'</CardFooter>
+        <CardTitle>Total Income for This Month</CardTitle>
+        <CardFooter className="text-muted">
+        </CardFooter>
           <CardTitle>'currentTotal left for month'</CardTitle>
           <CardFooter className="text-muted">'Days Left In Month'</CardFooter>
           <CardText>'Average $ left per day'</CardText>
